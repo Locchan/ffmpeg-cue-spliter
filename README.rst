@@ -5,6 +5,11 @@ Simple CUE splitter written in python.
 
 Depends on `CueParser <https://github.com/artur-shaik/CueParser>`_ (MIT License).
 
+Splits lossless .cue + (flac/ape/...) into separate files to any format (mp3/aac/...) that is recognized by your ffmpeg installation.
+
+Retains directory structure if you set a directory as a path to start. Will create the same directory structure in the output path. (Will not do so if the directory does not contain any .cue files).
+
+Cross-platform by design. All you need is ffmpeg installed on your system.
 
 Usage
 =========
