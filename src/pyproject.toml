@@ -1,0 +1,10 @@
+[build-system]
+requires = ["setuptools", "CueParser", "argparse"]
+
+[project]
+name = "cue_splitter"
+version = "1"
+description = "Lossless audio splitter"
+
+[project.scripts]
+cue_splitter = "cue_splitter.main:main"
