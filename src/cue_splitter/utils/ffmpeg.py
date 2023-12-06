@@ -21,7 +21,7 @@ def encode_cue(directory, cue_sheet, output_path, output_format, output_bitrate,
             cmd.append(f"{akey}={aval}")
         cmd.append("-ss")
         cmd.append(convert_offset(atrack.offset))
-        if atrack.duration is not None:
+        if atrack.duration is not None and atrack.duration.total_seconds() > 0:
             cmd.append("-t")
             cmd.append(str(atrack.duration.total_seconds()))
         cmd.append("-b:a")
