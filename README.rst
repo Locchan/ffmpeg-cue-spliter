@@ -8,11 +8,6 @@ Depends on `CueParser <https://github.com/artur-shaik/CueParser>`_ (MIT License)
 
 Usage
 =========
-
-usage: cue_splitter [-h] [-v] [-p PATH] [-o OUTPUT_PATH] [-b OUTPUT_BITRATE] [-f OUTPUT_FORMAT] [-a ADDITIONAL_FFMPEG_PARAMS] [-e ENCODING] [-c CUSTOM_FFMPEG_PATH] [-t FILENAME_TEMPLATE]
-
-options:
-  -h, --help            show this help message and exit
   -v, --version         Display version and license info.
   -p PATH, --path PATH  Path to the .cue file or directory with .cue file(s).
   -o OUTPUT_PATH, --output-path OUTPUT_PATH
@@ -29,8 +24,13 @@ options:
                         Custom path for ffmpeg executable.
   -t FILENAME_TEMPLATE, --filename-template FILENAME_TEMPLATE
                         Template for resulting filenames. Default is '{TRACK_NO}. {PERFORMER} - {TITLE}.{OUTPUT_FMT}'.
-                        Available variables:
-                        {PERFORMER} - Performer as specified in .cue file.
-                        {TITLE} - Track name as specified in .cue file.
-                        {OUTPUT_FMT} - Output file format e.g. 'mp3'.
-                        {TRACK_NO} - Track number as specified in .cue file.
+
+Available variables for FILENAME_TEMPLATE:
+
+  {PERFORMER} - Performer as specified in .cue file.
+  
+  {TITLE} - Track name as specified in .cue file.
+  
+  {OUTPUT_FMT} - Output file format e.g. 'mp3'.
+  
+  {TRACK_NO} - Track number as specified in .cue file.
