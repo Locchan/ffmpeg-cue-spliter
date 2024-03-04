@@ -1,8 +1,8 @@
 #!/usr/bin/env python
+import os
 
 import argparse
 from cueparser import CueSheet
-import os
 
 from cue_splitter.utils.ffmpeg import encode_cue
 from cue_splitter.utils.utils import check_args
@@ -10,6 +10,23 @@ from cue_splitter.utils.utils import check_args
 version = 1
 
 def main():
+    
+    if os.name == "nt":
+        print("Windows detected. Checking default codepage...")
+        try:
+            print("This is a test: 漢字")
+            print("Done. The system is compatible. Continuing...")
+        except:
+            print("\nWarning: This script will be unable to execute in current configuration.\nReason: The shell should be able to print UTF-8.")
+            print("\nRun the following commands before the script:")
+            print("\tIf you're using cmd or powershell:")
+            print("\t\tchcp 65001")
+            print("\t\tset PYTHONIOENCODING=utf-8")
+            print("\tIf you're using Git Bash or any other Unix-like shell:")
+            print("\t\tchcp.com 65001")
+            print("\t\texport PYTHONIOENCODING=utf-8")
+            exit(1)
+    
     argParser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)
     argParser.add_argument("-v", "--version", help="Display version and license info.", action='store_true')
     argParser.add_argument("-p", "--path", help="Path to the .cue file or directory with .cue file(s).", type=str)

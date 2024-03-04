@@ -3,7 +3,7 @@ requires = ["setuptools", "CueParser", "argparse"]
 
 [project]
 name = "cue_splitter"
-version = "1"
+version = "1.0.1"
 description = "Lossless audio splitter"
 
 [project.scripts]
